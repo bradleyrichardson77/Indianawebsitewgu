@@ -3,84 +3,136 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
         <title>Indiana</title>
-        <style>
-           .container {
-            display: flex;
-            justify-content: center;
-           }
-           .main {
-            flex: 1;
-            padding: 10px;
-           }
-           .side {
-            
-            padding: 10px;
-            border: 3px dotted rgb(0, 0, 89);
-           }
-          header {
-            background-color: rgb(0, 0, 89);
-            border: 5px solid black;
-            text-align: center;
-            color: antiquewhite;
-
-          }
-          nav {
-            padding: 0;
-            border: 5px solid grey;
-            text-align: center;
-          }
-          main {
-            text-align: center;
-          }
-          nav ul {
-            list-style-type: none;
-            margin: 0;
-            padding: 0;
-          }
-          nav li {
-            display: inline;
-          }
-          aside ul {
-            text-align: left;
-          }
-          footer{
-            text-align: center;
-            text-decoration: underline;
-          }
-        </style>
     </head>
     <body>
         <header>
-        <h1>Indiana</h1>
-        <p>This website is an informational presentation on the state of Indiana.</p>
-        </header>
+          <h1>Indiana</h1>
+          <p>This website is an informational presentation on the state of Indiana.</p>
+      </header>
         <nav>
             <h4>Navigation</h4>
             <ul>
-                <li><a href="indiana.html">Indiana</a></li>
+                <li><a href="index.html">Indiana</a></li>
                 <li><a href="Lafayette.html">Lafayette</a></li>
                 <li><a href="Indianapolis.html">Indianapolis</a></li>
                 <li><a href="Bloomington.html">Bloomington</a></li>
             </ul>
         </nav>
+        <div class="image-container">
+        <img src="indiana-state-flag.png" alt="Indiana state flag">
+        </div>
         <div class="container">
             <main>
                 <section class="section">
-                    <h2>Population:</h2>
-                    <p>Indiana has a current population of 6.8 million residents.</p>
-                    <h2>Statehood:</h2>
-                    <p>Indiana became the 19th state in 1816.</p>
-                </section>
+                    <h2>General information:</h2>
+                    <p>In 1816 Indiana became the 19th state to join the USA. Indiana is a mostly rural state located in the midwest with a current population of 6.8 million residents. The average Indiana residents makes 35,000 USD every year.</p>
+                    <h2>Top ranked universities by enrollment in 2024:</h2>
+                    <ol style="text-align: left;">
+                      <li>IUPUI indianapolis, IN</li>
+                      <li>Ball State University Muncie, IN</li>
+                      <li>Vincennes University Vincennes, IN</li>
+                    </ol>
+                
+                    <h2>Major Cities:</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>City</th>
+                                <th>Population</th>
+                                <th>Founded</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Indianapolis</td>
+                                <td>876,384</td>
+                                <td>1821</td>
+                            </tr>
+                            <tr>
+                                <td>Lafayette</td>
+                                <td>72,000</td>
+                                <td>1825</td>
+                            </tr>
+                            <tr>
+                                <td>Bloomington</td>
+                                <td>85,000</td>
+                                <td>1818</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <h3>References:</h3>
+                    <ol>
+                      <li>“Indiana Fun Facts & Trivia.” State of Indiana House of Representatives, www.indianahouserepublicans.com/indiana-fun-facts-trivia/#:~:text=Indiana%20is%20the%20first%20state,was%20officially%20adopted%20in%201963. Accessed 23 July 2024.</li>
+                      <li>Ihb. “Crossroads of America.” IHB, 30 July 2022, www.in.gov/history/state-historical-markers/find-a-marker/crossroads-of-america/.</li>
+                      <li>“Indiana State Seal.” Encyclopædia Britannica, Encyclopædia Britannica, inc., kids.britannica.com/kids/assembly/view/55665#:~:text=A%20seal%20similar%20to%20the,settlement%20on%20the%20American%20frontier. Accessed 23 July 2024.</li>
+
+                    </ol>
+                  </section>
                 <aside class="side">
                 <h3>Fun facts:</h3>
                     <ul>
                         <li>Indiana uses the state colors of blue and gold for their flag!</li>
                         <li>The state flower is a peony.</li>
+                        <li>Indiana is the first state to have a chapel in its state capitol. (Indiana House Republicans)</li>
+                        <li>The state motto, adopted in 1937, is "The Crossroads of America."(IHB)</li>
+                        <li>The state seal has been used since 1801.(britannica)</li>
+
                     </ul>
+                    <img width="100" src="indiana-state-flag.png" alt="Indiana state flag">
                 </aside>
+               
             </main>
         </div>
-        <footer>Thanks for visiting</footer>
+        <form class="email-form" method="post" onsubmit="return validateForm()">
+          <p>
+            <label for="first">First name:</label>
+            <input type="text" id="first" name="first" placeholder="First name" required>
+          </p>
+          <p>
+            <label for="last">Last name:</label>
+            <input type="text" id="last" name="last" placeholder="Last Name" required>
+          </p>
+          <p>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email" required>
+          </p>
+          <p>
+            <label for="emailConfirm">Confirm email:</label>
+            <input type="email" id="emailConfirm" name="emailConfirm" placeholder="Confirm Email" required>
+          </p>
+          <p>
+            <label for="questions">Questions:</label>
+            <textarea id="questions" name="questions" rows="3" cols="50">Questions?</textarea>
+          </p>
+          <p>
+            <input type="submit" value="submit">
+          </p>
+        </form>
+        <script>
+          function validateForm() {
+              const email = document.getElementById('email').value;
+              const emailConfirm = document.getElementById('emailConfirm').value;
+              const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+
+              if (!emailPattern.test(email)) {
+                  alert('Enter a valid email address');
+                  return false;
+              }
+
+              if (email !== emailConfirm) {
+                  alert('Emails do not match');
+                  return false;
+              }
+
+              return true;
+          }
+        </script>
+        <footer class="foot">
+          <h4>Website creator: Bradley Richardson</h4>
+          <p>Thank you for visiting!</p>
+          <a href="https://www.in.gov/dnr/" target="_blank">Visit Indiana DNR for wildlife information.</a>
+        </footer>
     </body>
 </html>
